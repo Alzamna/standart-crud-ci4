@@ -12,6 +12,10 @@
             <input type="number" name="harga" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
         </div>
         <div>
+            <label class="block mb-1 font-semibold">Deskripsi</label>
+            <input type="text" name="deskripsi" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400" required>
+        </div>
+        <div>
             <label class="block mb-1 font-semibold" for="gambar">Gambar Produk</label>
             <input type="file" name="gambar" id="gambar" class="w-full border border-gray-300 rounded px-3 py-2" onchange="previewGambar(event)">
             <br>
