@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ProdukModel;
 
-class Produk extends BaseController
+class ProdukController extends BaseController
 {
     public function index()
     {
@@ -20,11 +20,21 @@ class Produk extends BaseController
 
     public function store()
     {
+        $gambar = $this->request->getFile('gambar');
+
+        if ($gambar && $gambar->isValid() && !$gambar->hasMoved()) {
+            $namaFile = $gambar->getRandomName();
+            $gambar->move('uploads', $namaFile); 
+        } else {
+            $namaFile = null; 
+        }
+
         $model = new ProdukModel();
         $model->insert([
             'nama_produk' => $this->request->getPost('nama_produk'),
             'harga' => $this->request->getPost('harga'),
             'deskripsi' => $this->request->getPost('deskripsi'),
+            'gambar' => $namaFile,
         ]);
         return redirect()->to(base_url('produk'));
     }
@@ -39,10 +49,25 @@ class Produk extends BaseController
     public function update($id)
     {
         $model = new ProdukModel();
+        $gambar = $this->request->getFile('gambar');
+        $gambarLama = $this->request->getPost('gambar_lama');
+        
+        if ($gambar && $gambar->isValid() && !$gambar->hasMoved()) {
+            $namaFile = $gambar->getRandomName();
+            $gambar->move('uploads', $namaFile);
+            // Optional: hapus gambar lama jika ada dan berbeda
+            if ($gambarLama && file_exists('uploads/' . $gambarLama)) {
+                @unlink('uploads/' . $gambarLama);
+            }
+        } else {
+            $namaFile = $gambarLama;
+        }
+
         $model->update($id, [
             'nama_produk' => $this->request->getPost('nama_produk'),
             'harga' => $this->request->getPost('harga'),
             'deskripsi' => $this->request->getPost('deskripsi'),
+            'gambar' => $namaFile,
         ]);
         return redirect()->to(base_url('produk'));
     }
