@@ -1,3 +1,5 @@
+A modern and minimalist CRUD (Create, Read, Update, Delete) web application built using CodeIgniter 4, Tailwind CSS, and MySQL. Designed for beginners who want to learn MVC and build elegant interfaces with Tailwind.
+
 # CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
