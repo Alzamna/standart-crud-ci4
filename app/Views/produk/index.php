@@ -2,18 +2,18 @@
 <?= $this->section('content') ?>
 <div class="max-w-5xl mx-auto mt-10 bg-white shadow-lg rounded-lg p-6">
     <div class="flex justify-between items-center mb-6">
-        <h2 class="text-2xl font-bold">Daftar Produk</h2>
-        <a href="<?= base_url('produk/create') ?>" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Tambah Produk</a>
+        <h2 class="text-2xl font-bold">Product List</h2>
+        <a href="<?= base_url('produk/create') ?>" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Product</a>
     </div>
     <div class="overflow-x-auto">
         <table class="min-w-full bg-white border border-gray-200 rounded-lg">
             <thead>
                 <tr>
                     <th class="py-2 px-4 border-b">No</th>
-                    <th class="py-2 px-4 border-b">Nama Produk</th>
+                    <th class="py-2 px-4 border-b">Product Name</th>
                     <th class="py-2 px-4 border-b">Price</th>
                     <th class="py-2 px-4 border-b">Description</th>
-                    <th class="py-2 px-4 border-b">Gambar</th>
+                    <th class="py-2 px-4 border-b">Picture</th>
                     <th class="py-2 px-4 border-b">Action</th>
                 </tr>
             </thead>

@@ -5,10 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
 $routes->get('/produk', 'ProdukController::index');
 $routes->get('/produk/create', 'ProdukController::create');
 $routes->post('/produk/store', 'ProdukController::store');
 $routes->get('/produk/edit/(:num)', 'ProdukController::edit/$1');
 $routes->post('/produk/update/(:num)', 'ProdukController::update/$1');
 $routes->get('/produk/delete/(:num)', 'ProdukController::delete/$1');
+$routes->get('/', 'AdminController::home');
