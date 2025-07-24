@@ -10,7 +10,7 @@
             </div>
             <div>
                 <div class="text-2xl font-bold"><?= $jumlahProduk ?></div>
-                <div class="text-gray-600">Total Products</div>
+                <div class="text-gray-600">Products Total</div>
             </div>
         </div>
     </div>
